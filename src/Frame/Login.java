@@ -8,7 +8,9 @@ package Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import AppPackage.AnimationClass;
 
 /**
  *
@@ -18,10 +20,11 @@ import javax.swing.JPanel;
 public class Login extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Interfaz de logueo y principal del programa
      */
     public Login() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono_juego_32px.png")).getImage());
         this.setLocationRelativeTo(null);
     }
 
@@ -48,11 +51,13 @@ public class Login extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        jLExit = new javax.swing.JLabel();
+        jLJugar = new javax.swing.JLabel();
+        jLPreferencias = new javax.swing.JLabel();
         jPanelCuerpo = new JPanelConFondo("/Imagenes/phineas_y_ferb_juego.jpg");
         jPanelCabecera = new JPanelConFondo("/Imagenes/nubes.jpg");
+        jLabel9 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(60, 63, 65));
@@ -121,6 +126,11 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Menu_32px.png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         jPIngreso.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
 
         jLabel6.setBackground(new java.awt.Color(60, 63, 65));
@@ -155,20 +165,25 @@ public class Login extends javax.swing.JFrame {
         });
         jPIngreso.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, -1, 40));
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setForeground(new java.awt.Color(187, 187, 187));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Musical_Notes_32px.png"))); // NOI18N
-        jPIngreso.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
+        jLExit.setBackground(new java.awt.Color(255, 255, 255));
+        jLExit.setForeground(new java.awt.Color(187, 187, 187));
+        jLExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/exit_32px.png"))); // NOI18N
+        jLExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLExitMouseClicked(evt);
+            }
+        });
+        jPIngreso.add(jLExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 130, -1, 30));
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setForeground(new java.awt.Color(187, 187, 187));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Globe_32px.png"))); // NOI18N
-        jPIngreso.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 30));
+        jLJugar.setBackground(new java.awt.Color(255, 255, 255));
+        jLJugar.setForeground(new java.awt.Color(187, 187, 187));
+        jLJugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/jugar_32px.png"))); // NOI18N
+        jPIngreso.add(jLJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 50, -1, 30));
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setForeground(new java.awt.Color(187, 187, 187));
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Calculator_32px.png"))); // NOI18N
-        jPIngreso.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+        jLPreferencias.setBackground(new java.awt.Color(255, 255, 255));
+        jLPreferencias.setForeground(new java.awt.Color(187, 187, 187));
+        jLPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar_perfil_32px.png"))); // NOI18N
+        jPIngreso.add(jLPreferencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 90, -1, 30));
 
         getContentPane().add(jPIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 575));
 
@@ -191,17 +206,25 @@ public class Login extends javax.swing.JFrame {
 
         jPanelCabecera.setBackground(new java.awt.Color(255, 255, 255));
         jPanelCabecera.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelCabecera.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanelCabeceraLayout = new javax.swing.GroupLayout(jPanelCabecera);
-        jPanelCabecera.setLayout(jPanelCabeceraLayout);
-        jPanelCabeceraLayout.setHorizontalGroup(
-            jPanelCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
-        );
-        jPanelCabeceraLayout.setVerticalGroup(
-            jPanelCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Multiply_32px.png"))); // NOI18N
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+        jPanelCabecera.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, 40));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        jPanelCabecera.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, 40));
 
         getContentPane().add(jPanelCabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 760, 50));
 
@@ -217,8 +240,42 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+        // Registro de usuario 
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        this.setState(Login.ICONIFIED);
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        if (dialogo_exit() == 0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // muevo los elementos del menú para que sean visibles
+        // -->
+        AnimationClass objeto = new AnimationClass();
+        objeto.jLabelXRight(-40, 10, 10, 5, jLJugar);
+        objeto.jLabelXRight(-40, 10, 10, 5, jLPreferencias);
+        objeto.jLabelXRight(-40, 10, 10, 5, jLExit);
+        // oculto el menu
+        // <--
+        objeto.jLabelXLeft(10, -40, 10, 5, jLJugar);
+        objeto.jLabelXLeft(10, -40, 10, 5, jLPreferencias);
+        objeto.jLabelXLeft(10, -40, 10, 5, jLExit);
+        
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLExitMouseClicked
+        // confirmacion de salir del programa
+        if (dialogo_exit() == 0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jLExitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -257,10 +314,11 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLExit;
+    private javax.swing.JLabel jLJugar;
+    private javax.swing.JLabel jLPreferencias;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -268,6 +326,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPIngreso;
     private javax.swing.JPanel jPanelCabecera;
     private javax.swing.JPanel jPanelCuerpo;
@@ -278,4 +337,10 @@ public class Login extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private JPanelConFondo jPanelCabecera1; 
+
+    private int dialogo_exit()
+    {
+        int dialog = JOptionPane.YES_NO_OPTION;
+        return (JOptionPane.showConfirmDialog(null,"Desa salir del Juego?","Finalizar Programa",dialog));
+    }
 }
