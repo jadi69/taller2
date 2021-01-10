@@ -78,7 +78,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPIngreso.setBackground(new java.awt.Color(255, 255, 255));
-        jPIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         jPIngreso.setForeground(new java.awt.Color(255, 255, 255));
         jPIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -213,13 +212,15 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jPIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 575));
 
         jPanelCuerpo.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelCuerpo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(0, 153, 255), null, null));
         jPanelCuerpo.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelCuerpo.setPreferredSize(new java.awt.Dimension(760, 525));
+        jPanelCuerpo.setPreferredSize(new java.awt.Dimension(870, 525));
         jPanelCuerpo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLCuerpoPortada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/phineas_y_ferb_juego.png"))); // NOI18N
         jLCuerpoPortada.setText("jLabel10");
-        jPanelCuerpo.add(jLCuerpoPortada, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 530));
+        jLCuerpoPortada.setPreferredSize(new java.awt.Dimension(870, 525));
+        jPanelCuerpo.add(jLCuerpoPortada, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 525));
 
         getContentPane().add(jPanelCuerpo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 870, 525));
 
@@ -264,7 +265,7 @@ public class Login extends javax.swing.JFrame {
         if (jLCuerpoPortada.getX()==0){
             // muevo los elementos del frame para el registro de usuario
             // -->
-            objeto.jLabelXRight(0, 880, 40, 10, jLCuerpoPortada);  
+            objeto.jLabelXRight(0, 880, 40, 20, jLCuerpoPortada);  
             // agrego los controles para el ingreso del usuario declarando los objetos
             
             // Objetos JLabels
@@ -300,9 +301,9 @@ public class Login extends javax.swing.JFrame {
             jP_registroUser2 = new javax.swing.JPasswordField();
 
             // Objetos JCheckbox
-            JCheckBox jC_password1, jC_password2;
-            jC_password1 = new javax.swing.JCheckBox();
-            jC_password2 = new javax.swing.JCheckBox();        
+            JCheckBox jCh_password1, jCh_password2;
+            jCh_password1 = new javax.swing.JCheckBox();
+            jCh_password2 = new javax.swing.JCheckBox();        
             
             // Objetos JCombox
             JComboBox<Image> jC_avatar;
@@ -332,19 +333,22 @@ public class Login extends javax.swing.JFrame {
             jL_registroUsuario.setText("<Registro>");
             jPanelCuerpo.add(jL_registroUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
 
+            // etiqueta para imagen de usuario
             jL_imgUser.setBackground(new java.awt.Color(255, 255, 255));
             jL_imgUser.setForeground(new java.awt.Color(255, 255, 255));
             jL_imgUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             jL_imgUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_User_96px_2.png"))); // NOI18N
             jPanelCuerpo.add(jL_imgUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
 
+            // etiqueta nombre
             jL_nombre.setBackground(new java.awt.Color(238, 112, 82));
             jL_nombre.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_nombre.setForeground(new java.awt.Color(238, 112, 82));
             jL_nombre.setText("Nombre:");
             jPanelCuerpo.add(jL_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
-            jT_nombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+            // campo nombre
+            jT_nombre.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jT_nombre.setForeground(new java.awt.Color(153, 153, 153));
             jT_nombre.setBorder(null);
             jT_nombre.setCaretColor(new java.awt.Color(187, 187, 187));
@@ -359,6 +363,7 @@ public class Login extends javax.swing.JFrame {
             });
             jPanelCuerpo.add(jT_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 190, 40));
 
+            // etiqueta apellido
             jL_apellido.setBackground(new java.awt.Color(238, 112, 82));
             jL_apellido.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_apellido.setForeground(new java.awt.Color(238, 112, 82));
@@ -366,7 +371,8 @@ public class Login extends javax.swing.JFrame {
             jL_apellido.setText("Apellido:");
             jPanelCuerpo.add(jL_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
 
-            jT_apellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+            // campo apellido
+            jT_apellido.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jT_apellido.setForeground(new java.awt.Color(153, 153, 153));
             jT_apellido.setBorder(null);
             jT_apellido.setCaretColor(new java.awt.Color(187, 187, 187));
@@ -381,6 +387,7 @@ public class Login extends javax.swing.JFrame {
             });
             jPanelCuerpo.add(jT_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 190, 40));
 
+            // etiqueta correo
             jL_correo.setBackground(new java.awt.Color(238, 112, 82));
             jL_correo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_correo.setForeground(new java.awt.Color(238, 112, 82));
@@ -388,7 +395,8 @@ public class Login extends javax.swing.JFrame {
             jL_correo.setText("Correo :");
             jPanelCuerpo.add(jL_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
 
-            jT_correo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+            // campo correo
+            jT_correo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jT_correo.setForeground(new java.awt.Color(153, 153, 153));
             jT_correo.setBorder(null);
             jT_correo.setCaretColor(new java.awt.Color(187, 187, 187));
@@ -403,23 +411,27 @@ public class Login extends javax.swing.JFrame {
             });
             jPanelCuerpo.add(jT_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 190, 40));
 
+            // etiqueta para descripcion de que datos poner en la contraseña
             jL_clave.setBackground(new java.awt.Color(238, 112, 82));
             jL_clave.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_clave.setForeground(new java.awt.Color(238, 112, 82));
             jL_clave.setText("Clave (2 veces) [utilize letras (A,a,..Z,z) y nùmeros]");
             jPanelCuerpo.add(jL_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, -1));
 
+            // etiqueta separador
             jSeparator_1.setBackground(new java.awt.Color(60, 63, 65));
             jSeparator_1.setForeground(new java.awt.Color(45, 45, 45));
             jPanelCuerpo.add(jSeparator_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 410, 10));
 
+            // etiqueta nickname - apodo
             jL_nickName.setBackground(new java.awt.Color(238, 112, 82));
             jL_nickName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_nickName.setForeground(new java.awt.Color(238, 112, 82));
             jL_nickName.setText("Nickname(apodo):");
             jPanelCuerpo.add(jL_nickName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
-            jT_nickName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+            // campo nickname - apodo
+            jT_nickName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jT_nickName.setForeground(new java.awt.Color(153, 153, 153));
             jT_nickName.setBorder(null);
             jT_nickName.setCaretColor(new java.awt.Color(187, 187, 187));
@@ -434,62 +446,77 @@ public class Login extends javax.swing.JFrame {
             });
             jPanelCuerpo.add(jT_nickName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 190, 40));
 
+            // etiqueta para imagen de primer clave
             jL_iconPassword_1.setBackground(new java.awt.Color(60, 63, 65));
-            jL_iconPassword_1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+            jL_iconPassword_1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_iconPassword_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Key_32px.png"))); // NOI18N
             jPanelCuerpo.add(jL_iconPassword_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 30, 40));
 
-            jP_registroUser1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+            // campo password contraseña
+            jP_registroUser1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jP_registroUser1.setForeground(new java.awt.Color(153, 153, 153));
             jP_registroUser1.setBorder(null);
             jPanelCuerpo.add(jP_registroUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 410, 190, 40));
 
-            jC_password1.setBackground(new java.awt.Color(255, 255, 255));
-            jC_password1.setForeground(new java.awt.Color(238, 112, 82));
-            jC_password1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(238, 112, 82)));
-            jC_password1.setBorderPainted(true);
-            jC_password1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jC_password1.setMaximumSize(new java.awt.Dimension(18, 18));
-            jC_password1.setMinimumSize(new java.awt.Dimension(18, 18));
-            jC_password1.addActionListener(new java.awt.event.ActionListener() {
+            jCh_password1.setBackground(new java.awt.Color(255, 255, 255));
+            jCh_password1.setForeground(new java.awt.Color(238, 112, 82));
+            jCh_password1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(238, 112, 82)));
+            jCh_password1.setBorderPainted(true);
+            jCh_password1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jCh_password1.setMaximumSize(new java.awt.Dimension(18, 18));
+            jCh_password1.setMinimumSize(new java.awt.Dimension(18, 18));
+            jCh_password1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jCpassword1ActionPerformed(evt);
-                }
+                    jP_registroUser1.setFont(new java.awt.Font("Dialog", 0, 18));
+                    if (jCh_password1.isSelected()) {
+                        jP_registroUser1.setEchoChar((char) 0); //password = JPasswordField
+                    } else {
+                        jP_registroUser1.setEchoChar((char) '\u25cf');
+                    }                    
+                 }
             });
-            jPanelCuerpo.add(jC_password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 20, 20));
+            jPanelCuerpo.add(jCh_password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 20, 20));
             
-            
+            // etiqueta para imagen de confirmacion de clave
             jL_iconPassword_2.setBackground(new java.awt.Color(60, 63, 65));
-            jL_iconPassword_2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+            jL_iconPassword_2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_iconPassword_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Key_32px.png"))); // NOI18N
             jPanelCuerpo.add(jL_iconPassword_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 30, 40));
 
-            jP_registroUser2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+            // campo password2 (confirmacion de contraseña)
+            jP_registroUser2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jP_registroUser2.setForeground(new java.awt.Color(153, 153, 153));
+            jP_registroUser2.setEchoChar((char) '\u25cf');
             jP_registroUser2.setBorder(null);
             jPanelCuerpo.add(jP_registroUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 410, 190, 40));
 
-            jC_password2.setBackground(new java.awt.Color(255, 255, 255));
-            jC_password2.setForeground(new java.awt.Color(238, 112, 82));
-            jC_password2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(238, 112, 82)));
-            jC_password2.setBorderPainted(true);
-            jC_password2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jC_password2.setMaximumSize(new java.awt.Dimension(18, 18));
-            jC_password2.setMinimumSize(new java.awt.Dimension(18, 18));
-            jC_password2.addActionListener(new java.awt.event.ActionListener() {
+            jCh_password2.setBackground(new java.awt.Color(255, 255, 255));
+            jCh_password2.setForeground(new java.awt.Color(238, 112, 82));
+            jCh_password2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(238, 112, 82)));
+            jCh_password2.setBorderPainted(true);
+            jCh_password2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jCh_password2.setMaximumSize(new java.awt.Dimension(18, 18));
+            jCh_password2.setMinimumSize(new java.awt.Dimension(18, 18));
+            jCh_password2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jCpassword2ActionPerformed(evt);
+                    jP_registroUser2.setFont(new java.awt.Font("Dialog",0, 18));
+                    if (jCh_password2.isSelected()) {
+                        jP_registroUser2.setEchoChar((char) 0); //password = JPasswordField
+                    } else {
+                        jP_registroUser2.setEchoChar((char) '\u25cf');
+                    }                    
                 }
             });
-            jPanelCuerpo.add(jC_password2, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 420, 20, 20));            
+            jPanelCuerpo.add(jCh_password2, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 420, 20, 20));            
             
+            // etiqueta para código de invitación
             jL_codigoInvitacion.setBackground(new java.awt.Color(238, 112, 82));
             jL_codigoInvitacion.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_codigoInvitacion.setForeground(new java.awt.Color(238, 112, 82));
             jL_codigoInvitacion.setText("Código Invitación:");
             jPanelCuerpo.add(jL_codigoInvitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
 
-            jT_codigoInvitacion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+            jT_codigoInvitacion.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jT_codigoInvitacion.setForeground(new java.awt.Color(153, 153, 153));
             jT_codigoInvitacion.setBorder(null);
             jT_codigoInvitacion.setCaretColor(new java.awt.Color(187, 187, 187));
@@ -504,6 +531,7 @@ public class Login extends javax.swing.JFrame {
             });
             jPanelCuerpo.add(jT_codigoInvitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 190, 40));            
             
+            // etiqueta para la selección de avatar
             jL_avatar.setBackground(new java.awt.Color(238, 112, 82));
             jL_avatar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_avatar.setForeground(new java.awt.Color(238, 112, 82));
@@ -514,6 +542,7 @@ public class Login extends javax.swing.JFrame {
             jC_avatar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
             jPanelCuerpo.add(jC_avatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, 220, 130));
 
+            // etiqueta para selección de institución
             jL_institucion.setBackground(new java.awt.Color(238, 112, 82));
             jL_institucion.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_institucion.setForeground(new java.awt.Color(238, 112, 82));
@@ -524,6 +553,7 @@ public class Login extends javax.swing.JFrame {
             jC_institucion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
             jPanelCuerpo.add(jC_institucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 220, 40));
 
+            // etiqueta para seelcción de grupo
             jL_grupo.setBackground(new java.awt.Color(238, 112, 82));
             jL_grupo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
             jL_grupo.setForeground(new java.awt.Color(238, 112, 82));
@@ -562,9 +592,10 @@ public class Login extends javax.swing.JFrame {
                 jB_cancelar1ActionPerformed(evt);
             }
             });
-            jPanelCuerpo.add(jB_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, 130, 54));
+            jPanelCuerpo.add(jB_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 430, 130, 54));
             
-            // actualizo el Panel del Cuerpo
+            // le paso el control al nombre y actualizo el Panel del Cuerpo
+            jT_nombre.requestFocus();
             jPanelCuerpo.updateUI();
         }
         else {
@@ -575,7 +606,7 @@ public class Login extends javax.swing.JFrame {
             }
             // muestro la imagen principal
             // <--
-            objeto.jLabelXLeft(880, 0, 40, 10, jLCuerpoPortada);
+            objeto.jLabelXLeft(880, 0, 40, 20, jLCuerpoPortada);
         }
     }//GEN-LAST:event_jL_registrarseMouseClicked
 
@@ -645,23 +676,6 @@ public class Login extends javax.swing.JFrame {
         // Descartar el registro de usuario
     }                                             
 
-    private void jCpassword1ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-//        if (jC_password1.isSelected()) {
-//            jP_registroUser1.setEchoChar((char) 0); //password = JPasswordField
-//        } else {
-//            jP_registroUser1.setEchoChar('*');
-//        }
-    }		    
-
-    private void jCpassword2ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-//        if (jC_password2.isSelected()) {
-//            jP_registroUser2.setEchoChar((char) 0); //password = JPasswordField
-//        } else {
-//            jP_registroUser2.setEchoChar('*');
-//        }
-    }		    
-    
-    
     /**
      * @param args the command line arguments
      */
