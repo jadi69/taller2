@@ -27,15 +27,18 @@ import javax.swing.JCheckBox;
  * @author Javier
  */
 
-public class Login extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame {
 
     /**
      * Interfaz de logueo y principal del programa
      */
-    public Login() {
+    public Principal() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono_juego_32px.png")).getImage());
         this.setLocationRelativeTo(null);
+//        Principal panel=new Principal();
+//        jPanelCuerpo.add(panel);
+//        panel.setVisible(true);
     }
 
     /**
@@ -95,6 +98,7 @@ public class Login extends javax.swing.JFrame {
         jL_jugar.setBackground(new java.awt.Color(255, 255, 255));
         jL_jugar.setForeground(new java.awt.Color(187, 187, 187));
         jL_jugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/jugar_32px.png"))); // NOI18N
+        jL_jugar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jL_jugar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jL_jugarMouseClicked(evt);
@@ -105,6 +109,7 @@ public class Login extends javax.swing.JFrame {
         jL_preferencias.setBackground(new java.awt.Color(255, 255, 255));
         jL_preferencias.setForeground(new java.awt.Color(187, 187, 187));
         jL_preferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar_perfil_32px.png"))); // NOI18N
+        jL_preferencias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jL_preferencias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jL_preferenciasMouseClicked(evt);
@@ -115,6 +120,7 @@ public class Login extends javax.swing.JFrame {
         jL_exit.setBackground(new java.awt.Color(255, 255, 255));
         jL_exit.setForeground(new java.awt.Color(187, 187, 187));
         jL_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/exit_32px.png"))); // NOI18N
+        jL_exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jL_exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jL_exitMouseClicked(evt);
@@ -615,7 +621,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jL_recuperarClaveMouseClicked
 
     private void jLabelMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinimizarMouseClicked
-        this.setState(Login.ICONIFIED);
+        this.setState(Principal.ICONIFIED);
     }//GEN-LAST:event_jLabelMinimizarMouseClicked
 
     private void jLabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCerrarMouseClicked
@@ -693,20 +699,21 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new Principal().setVisible(true);
             }
         });
     }
